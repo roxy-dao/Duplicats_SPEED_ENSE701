@@ -1,9 +1,17 @@
+require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
+const path = require("path");
+const connectDb = require("./database/db");
+const app = express();
 
-const server = express();
+connectDb();
 
-server.get("/", (req, res) => res.send("Hello world!"));
+app.use(cors());
+app.use(express.json());
 
-const port = process.env.PORT || 8082;
+app.use("/api/articles", require("./routes/articles"));
+app.use("/api/practices", require("./routes/practice"));
 
-server.listen(port, () => console.log(`Server running on port ${port}`));
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}.`));
