@@ -9,7 +9,7 @@ const App = () => {
     <Router>
       <div>
         <h1> Software Engineering Practices AssignmentB</h1>
-        <ui className="header">
+        <ul className="header">
           <li>
           <NavLink to="/">Home</NavLink>
           </li>
@@ -19,7 +19,7 @@ const App = () => {
           <li>
            Search Database
           </li>
-        </ui>
+        </ul>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="SubmitArticle" element={<SubmitArticle />} />
