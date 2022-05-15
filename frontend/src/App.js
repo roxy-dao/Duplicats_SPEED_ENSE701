@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes, BrowserRouter as Router, NavLink } from 'react-router-dom'
+import NotFoundPage from './pages/404'
 import Home from './pages/Home'
 import SubmitArticle from './pages/Submit-Articles'
 
@@ -7,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <div>
-        <h1> Software Engineering Practice Assignment</h1>
+        <h1> Software Engineering Practices AssignmentB</h1>
         <ui className="header">
           <li>
           <NavLink to="/">Home</NavLink>
@@ -22,6 +23,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="SubmitArticle" element={<SubmitArticle />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
     </Router>
