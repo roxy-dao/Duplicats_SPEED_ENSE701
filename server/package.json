@@ -1,0 +1,35 @@
+{
+  "name": "duplicats_speed_ense701",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "app": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roxy-dao/Duplicats_SPEED_ENSE701.git"
+  },
+  "author": "Roxy Dao, Catharine Baker and Bond Trinh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roxy-dao/Duplicats_SPEED_ENSE701/issues"
+  },
+  "homepage": "https://github.com/roxy-dao/Duplicats_SPEED_ENSE701#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.3",
+    "validation": "^0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+    "engines": {
+    "node": "14.17.5"
+  }
+}
