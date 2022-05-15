@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes, BrowserRouter as Router, NavLink } from 'react-router-dom'
-
 import Home from './pages/Home'
+import SubmitArticle from './pages/Submit-Articles'
 
 const App = () => {
   return (
@@ -13,14 +13,15 @@ const App = () => {
           <NavLink to="/">Home</NavLink>
           </li>
           <li>
-           Select the Practice
+          <NavLink to="/SubmitArticle">Submit an Article</NavLink>
           </li>
           <li>
-           Submit an Article
+           Search Database
           </li>
         </ui>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="SubmitArticle" element={<SubmitArticle />} />
           </Routes>
         </div>
     </Router>
