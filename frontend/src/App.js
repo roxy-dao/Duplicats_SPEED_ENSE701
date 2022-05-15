@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Routes, BrowserRouter as Router, NavLink } from 'react-router-dom'
+import NotFoundPage from './pages/404'
+import Home from './pages/Home'
+import SubmitArticle from './pages/Submit-Articles'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div>
+        <h1> Software Engineering Practices AssignmentB</h1>
+        <ul className="header">
+          <li>
+          <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+          <NavLink to="/SubmitArticle">Submit an Article</NavLink>
+          </li>
+          <li>
+           Search Database
+          </li>
+        </ul>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="SubmitArticle" element={<SubmitArticle />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
