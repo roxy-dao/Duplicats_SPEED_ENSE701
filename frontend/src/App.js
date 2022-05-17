@@ -4,12 +4,13 @@ import NotFoundPage from './pages/404'
 import Home from './pages/Home'
 import SubmitArticle from './pages/Submit-Articles'
 import DisplayArticles from './pages/Display-Articles'
+import SearchArticle from './pages/Filter-Articles'
 
 const App = () => {
   return (
     <Router>
       <div>
-        <h1> Software Engineering Practices AssignmentB</h1>
+        <h1>Software Engineering Practices AssignmentB</h1>
         <ul className="header">
           <li>
           <NavLink to="/">Home</NavLink>
@@ -19,12 +20,16 @@ const App = () => {
           </li>
           <li>
           <NavLink to="/DisplayArticles">Submitted Articles</NavLink>
+          </li>          
+          <li>
+          <NavLink to="/SearchArticle">Search for an Article</NavLink>
           </li>
         </ul>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="SubmitArticle" element={<SubmitArticle />} />
             <Route path="DisplayArticles" element={<DisplayArticles />} />
+            <Route path="SearchArticle" element={<SearchArticle />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

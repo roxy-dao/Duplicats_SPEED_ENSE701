@@ -26,3 +26,12 @@ th
 {
     font-size: 24px;
 }
+
+.container select
+{
+    border-radius: 20px;
+    margin: 20px;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
