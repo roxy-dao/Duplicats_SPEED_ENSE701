@@ -1,18 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 import DataTable from '../components/DataTable';
-import '../components/Display-Articles.css'
+import '../components/Display-Articles.css';
 
 class DisplayArticles extends React.Component {
   constructor(props) {
     super(props);
     this.state = { articles: [] };
-  }
+  };
 
   componentDidMount() {
     axios.get('/api/articles')
     .then(res => {
-      this.setState( {articles: res.data })
+      this.setState({ articles: res.data })
     })
     .catch(function(error) {
       console.log(error);
@@ -23,7 +23,7 @@ class DisplayArticles extends React.Component {
     return this.state.articles.map((article, index) => {
       return <DataTable obj={article} key={index} />
     });
-  }
+  };
 
   render() {
     return (
