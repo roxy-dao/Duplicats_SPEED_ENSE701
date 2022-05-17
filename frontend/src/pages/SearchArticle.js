@@ -19,7 +19,7 @@ class FilterArticles extends React.Component {
 }
 
   componentDidMount() {
-    axios.get('/api/articles?sepractice=Mob+Programming')
+    axios.get('/api/articles/')
     .then(res => {
       this.setState({ articles: res.data })
     })
