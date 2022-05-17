@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter as Router, NavLink } from 'react-router-do
 import NotFoundPage from './pages/404'
 import Home from './pages/Home'
 import SubmitArticle from './pages/Submit-Articles'
-import SearchArticle from './pages/Search-Article'
+import DisplayArticles from './pages/Display-Articles'
 
 const App = () => {
   return (
@@ -18,13 +18,13 @@ const App = () => {
           <NavLink to="/SubmitArticle">Submit an Article</NavLink>
           </li>
           <li>
-          <NavLink to="/SearchArticle">Search for an Article</NavLink>
+          <NavLink to="/DisplayArticles">Submitted Articles</NavLink>
           </li>
         </ul>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="SubmitArticle" element={<SubmitArticle />} />
-            <Route path="SearchArticle" element={<SearchArticle />} />
+            <Route path="DisplayArticles" element={<DisplayArticles />} />
 
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
