@@ -10,7 +10,7 @@ class DisplayArticles extends React.Component {
   };
 
   componentDidMount() {
-    axios.get('/api/articles')
+    axios.get('/api/articles/')
     .then(res => {
       this.setState({ articles: res.data })
     })
@@ -38,6 +38,7 @@ class DisplayArticles extends React.Component {
               <th>DOI</th>
               <th>Claim</th>
               <th>Evidence</th>
+              <th>SE Practice</th>
             </tr>
           </thead>
           <tbody>

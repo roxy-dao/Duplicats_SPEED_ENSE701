@@ -24,6 +24,9 @@ class DataTable extends Component {
                 <td>
                     {this.props.obj.evidence}
                 </td>
+                <td>
+                    {this.props.obj.sepractice}
+                </td>
             </tr>
         );
     }
