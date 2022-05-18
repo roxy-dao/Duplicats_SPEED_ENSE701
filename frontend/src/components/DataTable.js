@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class DataTable extends Component {
     render() {
         return (
@@ -29,6 +30,6 @@ class DataTable extends Component {
                 </td>
             </tr>
         );
-    }
-}
+    };
+};
 export default DataTable;

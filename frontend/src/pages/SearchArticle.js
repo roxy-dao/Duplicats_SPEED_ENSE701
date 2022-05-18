@@ -6,8 +6,7 @@ import '../components/Display-Articles.css';
 class FilterArticles extends React.Component {
   constructor(props) {
     super(props);
-    this.state = 
-    { 
+    this.state = { 
         articles: [],
         search: '',
         searchChanged: ''
@@ -16,7 +15,7 @@ class FilterArticles extends React.Component {
   
   searchChanged = event => {
     this.setState({ search: event.target.value })
-}
+};
 
   componentDidMount() {
     axios.get('/api/articles/')
@@ -61,7 +60,7 @@ class FilterArticles extends React.Component {
         </table>
       </div>
     )
-  }
+  };
 };
 
 export default FilterArticles;
