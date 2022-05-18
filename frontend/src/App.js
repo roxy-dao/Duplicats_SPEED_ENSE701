@@ -4,7 +4,7 @@ import NotFoundPage from './pages/404'
 import Home from './pages/Home'
 import SubmitArticle from './pages/Submit-Articles'
 import DisplayArticles from './pages/Display-Articles'
-import SearchArticle from './pages/SearchArticle'
+import SearchArticle from './pages/Search-Article'
 
 const App = () => {
   return (
