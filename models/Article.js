@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
 const articleSchema = new mongoose.Schema({
   title: String,
@@ -9,7 +9,7 @@ const articleSchema = new mongoose.Schema({
   claim: String,
   evidence: String,
   sepractice: String,
-});
+})
 
-const Article = mongoose.model("Article", articleSchema);
-module.exports = Article;
+const Article = mongoose.model('Article', articleSchema)
+module.exports = Article
