@@ -7,7 +7,7 @@ class DataTable extends Component {
                     {this.props.obj.title}
                 </td>
                 <td>
-                    {this.props.obj.author}
+                    {this.props.obj.authors}
                 </td>
                 <td>
                     {this.props.obj.source}
