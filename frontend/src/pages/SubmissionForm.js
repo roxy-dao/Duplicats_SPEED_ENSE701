@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Box, Button, TextField, Typography } from '@material-ui/core'
 import { postArticle } from '../services/ArticleServices'
 import { getPractices } from '../services/PracticeServices'
+import Dropdown from '../components/Dropdown'
 
 const SubmissionForm = () => {
   const [title, setTitle] = useState('')
@@ -11,7 +12,8 @@ const SubmissionForm = () => {
   const [doi, setDoi] = useState('')
   const [claim, setClaim] = useState('')
   const [evidence, setEvidence] = useState('')
-  const [practices, setPractices] = useState('')
+  const [practices, setPractices] = useState([])
+  const [selectedPractice, setSelectedPractice] = useState('')
 
   const handleReset = () => {
     setTitle('')
@@ -21,7 +23,7 @@ const SubmissionForm = () => {
     setDoi('')
     setClaim('')
     setEvidence('')
-    setPractices('')
+    setSelectedPractice('')
   }
 
   const addArticle = () => {
@@ -33,7 +35,7 @@ const SubmissionForm = () => {
       doi: doi,
       claim: claim,
       evidence: evidence,
-      sepractice: practices,
+      sepractice: selectedPractice,
     }
     handleReset()
 
@@ -45,7 +47,7 @@ const SubmissionForm = () => {
       doi !== '' &&
       claim !== '' &&
       evidence !== '' &&
-      practices !== ''
+      selectedPractice !== ''
     ) {
       postArticle(article)
         .then((data) => {
@@ -69,7 +71,10 @@ const SubmissionForm = () => {
       .catch((error) => {
         console.log(error)
       })
+    console.log(practices)
   }, [])
+
+  console.log(selectedPractice)
 
   return (
     <Box
@@ -141,6 +146,12 @@ const SubmissionForm = () => {
           label="Evidence"
           onChange={(e) => setEvidence(e.target.value)}
         ></TextField>
+        <Dropdown
+          dropdownList={practices}
+          selected={selectedPractice}
+          setSelected={setSelectedPractice}
+          label="Select SE Practice"
+        />
         <Button onClick={addArticle}>Submit</Button>
         <Button style={{ marginBottom: '2em' }} onClick={handleReset}>
           Reset
