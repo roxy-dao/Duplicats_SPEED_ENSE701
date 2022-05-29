@@ -6,7 +6,7 @@ const Dropdown = ({ dropdownList, selected, setSelected, label }) => {
   }
 
   return (
-    <FormControl>
+    <FormControl style={{ marginBottom: '1em' }}>
       <InputLabel id="dropdown-label">{label}</InputLabel>
       <Select
         labelId="dropdown-label"

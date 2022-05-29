@@ -71,10 +71,7 @@ const SubmissionForm = () => {
       .catch((error) => {
         console.log(error)
       })
-    console.log(practices)
   }, [])
-
-  console.log(selectedPractice)
 
   return (
     <Box
@@ -90,7 +87,7 @@ const SubmissionForm = () => {
         style={{
           width: '100%',
           display: 'flex',
-          maxWidth: '250px',
+          maxWidth: '300px',
           flexDirection: 'column',
         }}
       >
@@ -152,8 +149,10 @@ const SubmissionForm = () => {
           setSelected={setSelectedPractice}
           label="Select SE Practice"
         />
-        <Button onClick={addArticle}>Submit</Button>
-        <Button style={{ marginBottom: '2em' }} onClick={handleReset}>
+        <Button variant="outlined" style={{ marginBottom: '1em' }} onClick={addArticle}>
+          Submit
+        </Button>
+        <Button variant="outlined" style={{ marginBottom: '2em' }} onClick={handleReset}>
           Reset
         </Button>
       </Box>
