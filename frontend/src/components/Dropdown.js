@@ -8,14 +8,7 @@ const Dropdown = ({ dropdownList, selected, setSelected, label }) => {
   return (
     <FormControl style={{ marginBottom: '1em' }}>
       <InputLabel style={{ marginLeft: '1em', marginTop: '-0.5em' }}>{label}</InputLabel>
-      <Select
-        labelId="dropdown-label"
-        id="dropdown-selector"
-        label={label}
-        value={selected}
-        onChange={handleChange}
-        variant="outlined"
-      >
+      <Select label={label} value={selected} onChange={handleChange} variant="outlined">
         {dropdownList.map((items) => (
           <MenuItem key={items} value={items}>
             {items}
