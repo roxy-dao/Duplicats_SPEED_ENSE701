@@ -14,6 +14,7 @@ const SubmissionForm = () => {
   const [evidence, setEvidence] = useState('')
   const [practices, setPractices] = useState([])
   const [selectedPractice, setSelectedPractice] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleReset = () => {
     setTitle('')
@@ -24,6 +25,7 @@ const SubmissionForm = () => {
     setClaim('')
     setEvidence('')
     setSelectedPractice('')
+    setIsSubmitted(false)
   }
 
   const addArticle = () => {
@@ -38,6 +40,7 @@ const SubmissionForm = () => {
       sepractice: selectedPractice,
     }
     handleReset()
+    setIsSubmitted(false)
 
     if (
       title !== '' &&
@@ -51,7 +54,7 @@ const SubmissionForm = () => {
     ) {
       postArticle(article)
         .then((data) => {
-          console.log(data)
+          setIsSubmitted(true)
         })
         .catch((error) => {
           console.log(error)
@@ -155,6 +158,20 @@ const SubmissionForm = () => {
         <Button variant="outlined" style={{ marginBottom: '2em' }} onClick={handleReset}>
           Reset
         </Button>
+        {isSubmitted && (
+          <Box
+            style={{
+              width: '100%',
+              display: 'flex',
+              maxWidth: '300px',
+              flexDirection: 'column',
+            }}
+          >
+            <Typography variant="h5" style={{ marginBottom: '0.5em' }}>
+              Article Submitted
+            </Typography>
+          </Box>
+        )}
       </Box>
     </Box>
   )
