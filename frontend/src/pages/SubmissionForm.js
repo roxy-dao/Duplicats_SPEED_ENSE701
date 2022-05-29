@@ -69,7 +69,6 @@ const SubmissionForm = () => {
       .then((data) => {
         const practices = data.map((practice) => practice.sepractice)
         setPractices(practices)
-        console.log(practices)
       })
       .catch((error) => {
         console.log(error)
