@@ -9,6 +9,10 @@ const articleSchema = new mongoose.Schema({
   claim: String,
   evidence: String,
   sepractice: String,
+  is_approved: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const Article = mongoose.model('Article', articleSchema)
