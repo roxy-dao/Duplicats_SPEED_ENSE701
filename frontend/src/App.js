@@ -28,8 +28,7 @@ const App = () => {
       <div>
         <h1>Software Engineering Practices AssignmentB</h1>
 
-        <DropDownBox
-        >
+        <DropDownBox>
           <Dropdown
             dropdownList={options}
             selected={selectedRole}
