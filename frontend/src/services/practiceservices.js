@@ -1,13 +1,11 @@
-import axios from "axios";
+import axios from 'axios'
 
 const getPractices = async () => {
-  return axios.get("/api/practices").then((articles) => articles.data);
-};
+  return axios.get('/api/practices').then((practices) => practices.data)
+}
 
-const postPractices = async (article) => {
-  return axios
-    .post("/api/practices", article)
-    .then((articles) => articles.data);
-};
+const postPractices = async (practice) => {
+  return axios.post('/api/practices', practice).then((practices) => practices.data)
+}
 
-export { getPractices, postPractices };
+export { getPractices, postPractices }

@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { InputLabel, MenuItem, Select, FormControl } from '@material-ui/core'
 
-const Dropdown = () => {
-  const { register, handleSubmit } = useForm()
-  const [result, setResult] = useState('')
-  const onChange = (data) => setResult(JSON.stringify(data));
+const Dropdown = ({ dropdownList, selected, setSelected, label }) => {
+  const handleChange = (event) => {
+    setSelected(event.target.value)
+  }
 
   return (
-    <form onSubmit={handleSubmit(onChange)}>
-
-      <select {...register('sepractice')}>
-        <option value="Moderartor">Moderator</option>
-        <option value="Analyst">Analyst</option>
-        <option value="Search/Submit">Search/Submit Article</option>
-      </select>
-
-      <p>{result}</p>
-    </form>
+    <FormControl style={{ marginBottom: '1em' }}>
+      <InputLabel style={{ marginLeft: '1em', marginTop: '-0.5em' }}>{label}</InputLabel>
+      <Select label={label} value={selected} onChange={handleChange} variant="outlined">
+        {dropdownList.map((items) => (
+          <MenuItem key={items} value={items}>
+            {items}
+          </MenuItem>
+        ))}
+      </Select>
+    </FormControl>
   )
 }
 
 export default Dropdown
+
