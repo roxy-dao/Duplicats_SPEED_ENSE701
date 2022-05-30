@@ -8,84 +8,35 @@ import SearchArticle from './pages/SearchArticle'
 import styled from 'styled-components'
 import ModerateArticles from './pages/ModerateArticles'
 import AnalysisArticle from './pages/AnalysisArticles'
+import Dropdown from './components/Dropdown'
+import { Box } from '@material-ui/core'
 
-const DropDownContainer = styled('div')`
-  width: 15em;
-  background-color: #ffffff;
-`
-
-const DropDownHeader = styled('div')`
-  margin-bottom: 0.8em;
-  padding: 0.4em 2em 0.4em 1em;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-  font-weight: 500;
-  font-size: 1.3rem;
-  color: #3faffa;
-`
-
-const DropDownListContainer = styled('div')`
-  position: absolute;
-  z-index: 100;
-  width: 15em;
-`
-
-const DropDownList = styled('ul')`
-  padding: 0;
-  margin: 0;
-  padding-left: 1em;
-  background: #ffffff;
-  border: 2px solid #e5e5e5;
-  box-sizing: border-box;
-  color: #3faffa;
-  font-size: 1.3rem;
-  font-weight: 500;
-  &:first-child {
-    padding-top: 0.8em;
-  }
-`
-
-const ListItem = styled('li')`
-  list-style: none;
-  margin-bottom: 0.8em;
-  &:hover {
-    color: #ffffff;
-  }
+const DropDownBox = styled(Box)`
+  width: 100%;
+  display: flex;
+  max-width: 300px;
+  flex-direction: column;
 `
 
 const options = ['Submitter/Searcher', 'Moderator', 'Analyst']
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedOption, setSelectedOption] = useState(null)
-
-  const toggling = () => setIsOpen(!isOpen)
-
-  const onOptionClicked = (value) => () => {
-    setSelectedOption(value)
-    setIsOpen(false)
-    console.log(selectedOption)
-  }
+  const [selectedRole, setSelectedRole] = useState('')
 
   return (
     <Router>
       <div>
         <h1>Software Engineering Practices AssignmentB</h1>
-        <DropDownContainer>
-          <DropDownHeader onClick={toggling}>
-            {selectedOption || 'Select a role ...'}
-          </DropDownHeader>
-          {isOpen && (
-            <DropDownListContainer>
-              <DropDownList>
-                {options.map((option) => (
-                  <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
-                    {option}
-                  </ListItem>
-                ))}
-              </DropDownList>
-            </DropDownListContainer>
-          )}
-        </DropDownContainer>
+
+        <DropDownBox
+        >
+          <Dropdown
+            dropdownList={options}
+            selected={selectedRole}
+            setSelected={setSelectedRole}
+            label="Select role"
+          />
+        </DropDownBox>
 
         <ul className="header">
           <li>
@@ -103,12 +54,12 @@ const App = () => {
             <NavLink to="/search-article">Search for an Article</NavLink>
           </li>
 
-          {selectedOption === 'Moderator' && (
+          {selectedRole === 'Moderator' && (
             <li>
               <NavLink to="/moderate-articles">Moderator Articles</NavLink>
             </li>
           )}
-          {selectedOption === 'Analyst' && (
+          {selectedRole === 'Analyst' && (
             <li>
               <NavLink to="/analysis-article">Analyse Articles</NavLink>
             </li>
