@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes, BrowserRouter as Router, NavLink } from 'react-router-dom'
 import NotFoundPage from './pages/404'
 import Home from './pages/Home'
-import SubmitArticle from './pages/SubmitArticles'
+import SubmitArticle from './pages/SubmissionForm'
 import DisplayArticles from './pages/DisplayArticles'
 import SearchArticle from './pages/SearchArticle'
 
