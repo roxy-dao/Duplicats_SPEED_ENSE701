@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Box, Button, TextField, Typography } from '@material-ui/core'
-import { postArticle } from '../services/ArticleServices'
-import { getPractices } from '../services/PracticeServices'
+import { postArticle } from '../services/articleservices'
+import { getPractices } from '../services/practiceservices'
 import Dropdown from '../components/Dropdown'
 
 const SubmissionForm = () => {
