@@ -8,4 +8,8 @@ const postArticle = async (article) => {
   return axios.post('/api/articles', article).then((articles) => articles.data)
 }
 
-export { getArticles, postArticle }
+const deleteArticle = async (id) => {
+  return axios.delete(`/api/articles/${id}`).then((articles) => articles.data)
+}
+
+export { getArticles, postArticle, deleteArticle }
