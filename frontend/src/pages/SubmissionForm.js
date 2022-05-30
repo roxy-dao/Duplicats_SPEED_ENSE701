@@ -38,6 +38,7 @@ const SubmissionForm = () => {
       claim: claim,
       evidence: evidence,
       sepractice: selectedPractice,
+      is_approved: false,
     }
     handleReset()
     setIsSubmitted(false)
