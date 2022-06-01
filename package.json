@@ -9,7 +9,7 @@
     "dev": "nodemon server.js mock-db",
     "frontend": "npm start --prefix frontend",
     "fullstack": "concurrently \"npm run start\" \"npm run frontend\"",
-    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install --force && npm run build",
     "test": "mocha tests --recursive"
   },
   "repository": {
