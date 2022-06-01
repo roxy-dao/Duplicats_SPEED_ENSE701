@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../components/DataTableCheckList.css'
 
 class DataTableCheckList extends Component {
     render() {
@@ -29,7 +30,10 @@ class DataTableCheckList extends Component {
                     {this.props.obj.sepractice}
                 </td>
                 <td>
-                    <label><input type="checkbox" checked/></label>
+                    <button class="btn" type="button">Accept</button>
+                </td>                
+                <td>
+                    <button class="btn" type="submit">Decline</button>
                 </td>
             </tr>
         );
