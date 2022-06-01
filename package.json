@@ -7,6 +7,8 @@
     "start": "node server.js",
     "app": "nodemon server.js",
     "dev": "nodemon server.js mock-db",
+    "frontend": "npm start --prefix frontend",
+    "fullstack": "concurrently \"npm run start\" \"npm run frontend\"",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build",
     "test": "mocha tests --recursive"
   },
@@ -24,6 +26,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "chai": "^4.3.6",
+    "concurrently": "^7.2.1",
     "config": "^3.3.7",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
