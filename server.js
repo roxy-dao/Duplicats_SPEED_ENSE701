@@ -4,8 +4,16 @@ const cors = require('cors')
 const path = require('path')
 const connectDb = require('./database/db')
 const app = express()
+const MOCK_DB = 'mock-db'
 
-connectDb()
+const dbMode = process.env.DB_MODE || MOCK_DB
+if (dbMode === MOCK_DB) {
+  const { connectMockDb, populateMockDb } = require('./database/mockDb')
+  connectMockDb()
+  populateMockDb()
+} else {
+  connectDb()
+}
 
 app.use(cors())
 app.use(express.json())
