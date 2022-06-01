@@ -1,8 +1,8 @@
-const moongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-const practiceSchema = new moongoose.Schema({
+const practiceSchema = new mongoose.Schema({
   sepractice: String,
 })
 
-const Practice = moongoose.model('Practice', practiceSchema)
+const Practice = mongoose.model('Practice', practiceSchema)
 module.exports = Practice
