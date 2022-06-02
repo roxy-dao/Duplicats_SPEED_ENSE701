@@ -1,4 +1,4 @@
-module.exports.mockPractices = [{ practice: 'TDD' }, { practice: 'Mob Programming' }]
+module.exports.mockPractices = [{ sepractice: 'TDD' }, { sepractice: 'Mob Programming' }]
 
 module.exports.mockArticles = [
   {

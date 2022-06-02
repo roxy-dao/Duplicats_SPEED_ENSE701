@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "app": "nodemon server.js",
-    "dev": "nodemon server.js mock-db",
+    "dev": "nodemon server.js",
+    "dev:mock": "nodemon server.js mock-db",
     "frontend": "npm start --prefix frontend",
     "fullstack": "concurrently \"npm run start\" \"npm run frontend\"",
     "heroku-postbuild": "cd frontend && npm install --force --only=dev && npm install && npm run build",
