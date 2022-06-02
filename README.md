@@ -10,7 +10,7 @@
 
 1. Ensure that you are running the backend on `npm run dev` to start the backend.
 2. Run `npm install` in the root and frontend folders to install all libraries.
-3. Run `npm start` frontend folders to start the frontend.
+3. Run `npm start` frontend folder to start the frontend.
 4. Alternatively, use `npm run fullstack` to start both the server and frontend.
 
 ## Testing
